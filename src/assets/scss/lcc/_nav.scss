@@ -1,0 +1,15 @@
+
+.head-nav {
+	list-style-type: none;
+	margin: 0;
+}
+
+.head-nav-item {
+	color: $gray-dark;
+	padding: 1rem;
+	
+	&:hover {
+		text-decoration: none;
+		color: $gray-light;
+	}
+}

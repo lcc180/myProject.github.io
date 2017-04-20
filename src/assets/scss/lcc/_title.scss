@@ -1,0 +1,28 @@
+
+// titles's css includes all styles
+
+.title-tmall {
+	border-left: .3rem solid $brand-primary;
+	padding: .1rem 0 .1rem .8rem;
+	margin-bottom: 1rem;
+
+	&.secondary {
+		border-left-color: $brand-success;
+	}
+	
+	>small {
+		font-weight: 300;
+	}
+
+	>.right {
+		float: right;
+		font-size: 12px;
+		margin-top: 8px;
+	}
+}
+
+.title-border {
+	padding: .1rem 0 .1rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}

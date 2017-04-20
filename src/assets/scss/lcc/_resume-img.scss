@@ -1,0 +1,30 @@
+
+// 简历头像的
+
+.resume-img {
+	width: $resume-img-width;
+	height: $resume-img-height;
+	padding: 2rem;
+	position: relative;
+	
+	.resume-img-border {
+		position: absolute;
+		
+		width: 50%;
+		height: 50%;
+		
+		&.left {
+			left: 0;
+			top: 0;
+			border-left: $resume-img-border solid $resume-img-color;
+			border-top: $resume-img-border solid $resume-img-color;
+		}
+
+		&.right {
+			right: 0;
+			bottom: 0;
+			border-right: $resume-img-border solid $resume-img-color;
+			border-bottom: $resume-img-border solid $resume-img-color;
+		}
+	}
+}
