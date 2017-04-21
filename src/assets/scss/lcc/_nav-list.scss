@@ -1,0 +1,36 @@
+
+.nav-list {
+	@include list-unstyled;
+	margin-left: 1rem;
+
+	>.nav-list-item {
+		display: block;
+		margin-bottom: .5rem;
+		color: $nav-list-color;
+
+		&.active,&:hover {
+			color: $nav-list-active;
+			text-decoration: none;
+		}
+	}
+}
+
+pre {
+	border-radius: 3px;
+	background: #f7f7f9;
+}
+
+.article-detail {
+	padding-bottom: 5rem;
+	> h2 {
+		margin-bottom: 2rem;
+	}
+
+	> hr {
+		margin: 3rem 0;
+	}
+
+	> h5 {
+		margin-top: 2rem;
+	}
+}

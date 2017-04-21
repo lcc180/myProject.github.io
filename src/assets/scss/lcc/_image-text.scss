@@ -1,0 +1,29 @@
+
+// sdf
+
+.image-text {
+	text-align: center;
+
+	>img {
+		max-width: 100%;
+		max-height: 8rem;
+		transition: all .3s;
+	}
+
+	> h6 {
+		font-size: 14px;
+		margin-top: .5rem;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	&:hover {
+		cursor: pointer;
+		>img {
+			// margin-left: -.3rem;
+		}
+		> h6 {
+			color: $text-muted;
+		}
+	}
+}
