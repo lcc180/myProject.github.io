@@ -5,42 +5,21 @@
 master分支用于生产环境，请勿直接提交到master分支
 
 ### 环境配置：
-安装[nodejs](https://nodejs.org/download/)(版本为v4.2.2)
-安装gulp
-```
-npm install -g gulp@3.9.1
-```
+安装[nodejs](https://nodejs.org/download/)(最新稳定版即可)
 
 ### 安装项目依赖
 ```
-$ cd pandora-web
 $ npm install -g cnpm
-$ cnpm install
 ```
 
 ### 启动项目
 ```
-$ gulp s
-```
-
-### 切换API并启动项目
-```
-// 测试环境
-$ gulp s --env=test
-// 生产环境
-$ gulp s --env=production
-// 开发环境
-$ gulp s --env=dev
-或
-$ gulp s
+$ npm run dev
 ```
 
 ### 生成可部署的代码
 ```
-// 生成可部署的版本（生产环境）
-$ gulp build --env=production
-// 生成可部署的版本（测试环境）
-$ gulp build --env=test
+$ npm run build
 ```
 
 ### 开发指引
