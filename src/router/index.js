@@ -10,6 +10,11 @@ import c3 from '@/components/es6/c3'
 import c4 from '@/components/es6/c4'
 import c5 from '@/components/es6/c5'
 import c6 from '@/components/es6/c6'
+import node from '@/components/node'
+import nodeC8 from '@/components/node/c8'
+import nodeC6 from '@/components/node/c6'
+import nodeC5 from '@/components/node/c5'
+import nodeC7 from '@/components/node/c7'
 
 Vue.use(Router)
 
@@ -59,6 +64,29 @@ export default new Router({
         {
           path: 'c6',
           component: c6
+        }
+      ]
+    },
+    {
+      path: '/node',
+      name: 'node',
+      component: node,
+      children: [
+        {
+          path: 'c8',
+          component: nodeC8
+        },
+        {
+          path: 'c6',
+          component: nodeC6
+        },
+        {
+          path: 'c5',
+          component: nodeC5
+        },
+        {
+          path: 'c7',
+          component: nodeC7
         }
       ]
     }

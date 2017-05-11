@@ -26,7 +26,9 @@
             </div>
             <div class="col-md-2 image-text">
               <img src="../assets/images/books/vue.jpeg" alt="">
-              <h6>Vue.js权威指南</h6>
+              <h6>
+                Vue.js权威指南
+              </h6>
             </div>
             <div class="col-md-2 image-text">
               <img src="../assets/images/books/css.jpeg" alt="">
@@ -34,7 +36,7 @@
             </div>
             <div class="col-md-2 image-text">
               <img src="../assets/images/books/node.jpeg" alt="">
-              <h6>深入浅出nodejs</h6>
+              <h6><router-link :to="{ path: '/node'}">深入浅出nodejs</router-link></h6>
             </div>
           </div>
           <h5 class="title-tmall secondary mt-4">最近更新 <small>FASHION & BEAUTY</small></h5>

@@ -14,9 +14,11 @@ new Vue({
   router,
   template: '<App/>',
   components: { App },
-  mothods: {
+  methods: {
     go () {
-      console.log(_.now())
+      var es = 'e'
+      console.log(_.now(), es)
+      for (let i = 0; i < 10; i++) console.log(i)
     }
   }
 })
