@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import _ from 'lodash'
-import './assets/scss/bootstrap.scss'
+import './resource'
+import vueStore from '@/vuex/store'
+
+// 引入sass样式文件
+import '@/assets/scss/bootstrap.scss'
+
+// 第三方插件
+/* exported Velocity */
+import 'velocity-animate'
 
 Vue.config.productionTip = false
 
@@ -14,11 +21,8 @@ new Vue({
   router,
   template: '<App/>',
   components: { App },
-  methods: {
-    go () {
-      var es = 'e'
-      console.log(_.now(), es)
-      for (let i = 0; i < 10; i++) console.log(i)
-    }
+  store: vueStore,
+  methods: {},
+  created () {
   }
 })

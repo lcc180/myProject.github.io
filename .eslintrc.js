@@ -25,6 +25,11 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   },
   "globals": {
-    "_": true
+    "$": true,
+    "_": true,
+    "Velocity": true,
+    store: true,
+    Vue: true,
+    Tether: true
   }
 }

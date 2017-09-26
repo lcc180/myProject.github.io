@@ -53,6 +53,7 @@ export default {
   name: 'bookDetail',
   data () {
     return {
+      islogin: true
     }
   },
   components: {

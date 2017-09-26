@@ -1,29 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Home from '@/components/Home'
-import bookDetail from '@/components/bookDetail'
-import cssGroup from '@/components/cssGroup'
-import es6 from '@/components/es6'
-import c1 from '@/components/es6/c1'
-import c3 from '@/components/es6/c3'
-import c4 from '@/components/es6/c4'
-import c5 from '@/components/es6/c5'
-import c6 from '@/components/es6/c6'
-import node from '@/components/node'
-import nodeC8 from '@/components/node/c8'
-import nodeC6 from '@/components/node/c6'
-import nodeC5 from '@/components/node/c5'
-import nodeC7 from '@/components/node/c7'
+import Hello from '@/modules/Hello'
+import bookDetail from '@/modules/bookDetail'
+import cssGroup from '@/modules/cssGroup'
+import es6 from '@/modules/es6'
+import c1 from '@/modules/es6/c1'
+import c3 from '@/modules/es6/c3'
+import c4 from '@/modules/es6/c4'
+import c5 from '@/modules/es6/c5'
+import c6 from '@/modules/es6/c6'
+import node from '@/modules/node'
+import nodeC8 from '@/modules/node/c8'
+import nodeC6 from '@/modules/node/c6'
+import nodeC5 from '@/modules/node/c5'
+import nodeC7 from '@/modules/node/c7'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Home',
-      component: Home
+      path: '/home',
+      name: 'home',
+      component: require('@/modules/home'),
+      meta: {
+        footer: true
+      }
     },
     {
       path: '/hello',
@@ -39,6 +41,11 @@ export default new Router({
       path: '/bookDetail/:id',
       name: 'bookDetail',
       component: bookDetail
+    },
+    {
+      path: '/catalogue',
+      name: 'catalogue',
+      component: require('@/modules/catalogue')
     },
     {
       path: '/es6',
@@ -89,6 +96,12 @@ export default new Router({
           component: nodeC7
         }
       ]
+    },
+
+    {
+      path: '/knowledge',
+      name: 'knowledge',
+      component: require('@/modules/knowledge/index')
     }
   ]
 })

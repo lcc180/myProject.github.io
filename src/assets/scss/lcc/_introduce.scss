@@ -57,3 +57,27 @@
 .introduce-content {
 	margin-top: 5rem;
 }
+
+.title-bar {
+	text-align: center;
+	position: relative;
+	display: inline-block;
+
+	@extend .list-unstyled;
+
+	.title-bar-item {
+		padding: .5rem 1.5rem 1rem;
+		display: inline-block;
+		cursor: pointer;
+		font-size: .9375rem;
+	}
+
+	.title-bar-line {
+		height: 3px;
+		background: $brand-primary;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transition: all .3s;
+	}
+}

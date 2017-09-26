@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import store from '@/vuex/store'
 
 export default {
   name: 'es6',
@@ -57,6 +58,9 @@ export default {
   components: {
   },
   methods: {
+  },
+  created () {
+    console.log(store.state.count)
   }
 }
 </script>

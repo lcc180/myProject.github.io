@@ -5,19 +5,35 @@
         <div class="row">
           <div class="col-md-12">
             <ul class="head-nav">
-              <router-link class="head-nav-item pl-0" to="/">
-                <i class="iconfont icon-taxi"></i>
+              <li class="head-nav-item logo">
+                <img src="http://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="">
+              </li>
+              <router-link class="head-nav-item pl-0" to="/home" active-class="active">
                 JC书城
               </router-link>
-              <a href="" class="head-nav-item">分类</a>
+              <router-link class="head-nav-item" to="/cssGroup" active-class="active">
+                样式库
+              </router-link>
+              <router-link class="head-nav-item" to="/knowledge" active-class="active">
+                学习笔记
+              </router-link>
               <a href="" class="head-nav-item">精选</a>
               <a href="" class="head-nav-item">分类</a>
               <a href="" class="head-nav-item">
-                <i class="iconfont icon-time"></i>
                 分类
               </a>
+
+              <li class="head-nav-item right">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">
+                      <i class="iconfont icon-search"></i>
+                    </button>
+                  </span>
+                </div>
+              </li>
             </ul>
-            
           </div>
         </div>
       </div>
@@ -69,9 +85,11 @@
     </div> -->
     
     <!--  -->
-    <router-view></router-view>
-
-    <footer class="copyright">
+    <keep-alive exclude="">
+      <router-view></router-view>
+    </keep-alive>
+    
+    <footer class="copyright" v-show="$route.meta.footer">
       © 2017 GitHub, Inc.
     </footer>
   </div>

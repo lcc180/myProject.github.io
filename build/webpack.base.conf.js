@@ -51,7 +51,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: utils.assetsPath('images/[name].[hash:7].[ext]')
         }
       },
       {
@@ -61,6 +61,13 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /bootstrap\/js\/src\/.*\.js$/,
+        loaders: [
+          'imports?jQuery=jquery,Tether=tether',
+          'babel?babelrc=true',
+        ],
       }
     ]
   }

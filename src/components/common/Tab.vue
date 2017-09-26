@@ -26,8 +26,11 @@ export default {
   },
   methods: {
     toggleTab (index) {
-      this.$emit('increment', index)
+      this.$emit('update:tabIndex', index)
     }
+  },
+  created () {
+    console.log()
   }
 }
 </script>

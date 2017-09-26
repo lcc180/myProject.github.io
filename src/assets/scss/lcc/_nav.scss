@@ -2,14 +2,32 @@
 .head-nav {
 	list-style-type: none;
 	margin: 0;
+	padding: 0;
 }
 
 .head-nav-item {
-	color: $gray-dark;
-	padding: 1rem;
+	color: lighten($gray-dark, 40%);
+	padding: 1rem 1.5rem;
+	display: inline-block;
+	font-size: .9375rem;
+	vertical-align: middle;
 	
 	&:hover {
 		text-decoration: none;
-		color: $gray-light;
+		color: $gray-dark;
+	}
+
+	&.active {
+		color: $gray-dark;
+	}
+
+	&.logo {
+		img {
+			height: 1.5rem;
+		}
+	}
+
+	&.right {
+		// float: right;
 	}
 }
