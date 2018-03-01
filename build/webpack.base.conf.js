@@ -68,6 +68,11 @@ module.exports = {
           'imports?jQuery=jquery,Tether=tether',
           'babel?babelrc=true',
         ],
+      },
+      {
+        test: /\.js$/, // Check for all js files
+        exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
+        loader: 'babel-loader'
       }
     ]
   }

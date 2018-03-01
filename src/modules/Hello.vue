@@ -32,6 +32,17 @@ export default {
     go () {
       console.log(1)
     }
+  },
+  activated () {
+    let xhr = new XMLHttpRequest()
+    xhr.open('get', 'http://192.168.13.87:3000/knowledges/list')
+    xhr.send()
+    console.log(xhr)
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(JSON.parse(xhr.response))
+      }
+    }
   }
 }
 </script>

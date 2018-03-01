@@ -89,7 +89,7 @@
       <router-view></router-view>
     </keep-alive>
     
-    <footer class="copyright" v-show="$route.meta.footer">
+    <footer class="copyright" v-show="!$route.meta.hideFooter">
       © 2017 GitHub, Inc.
     </footer>
   </div>

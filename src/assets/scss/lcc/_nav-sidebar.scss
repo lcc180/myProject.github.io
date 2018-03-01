@@ -1,0 +1,18 @@
+.nav-sidebar {
+	@include list-unstyled;
+
+	> li {
+		color: $nav-sidebar-color;
+		margin-bottom: .5rem;
+
+		> a {
+			color: $nav-sidebar-color;
+		}
+
+		&.active {
+			> a {
+				color: $body-color;
+			}
+		}
+	}
+}

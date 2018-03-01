@@ -7,10 +7,15 @@
 
 .head-nav-item {
 	color: lighten($gray-dark, 40%);
-	padding: 1rem 1.5rem;
+	padding: 1rem 0;
+	margin: {
+		left: 1.5rem;
+		right: 1.5rem;
+	}
 	display: inline-block;
-	font-size: .9375rem;
+	font-size: .875rem;
 	vertical-align: middle;
+	border-bottom: 2px solid #fff;
 	
 	&:hover {
 		text-decoration: none;
@@ -19,6 +24,7 @@
 
 	&.active {
 		color: $gray-dark;
+		border-bottom: 2px solid $brand-primary;
 	}
 
 	&.logo {

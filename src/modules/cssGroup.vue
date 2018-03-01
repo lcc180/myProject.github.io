@@ -66,7 +66,7 @@
             </div><br>
           </div>
           <div class="col-md-3">
-            <div class="input-group">
+            <div class="input-group mb-1">
               <input type="text" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button">
@@ -74,10 +74,11 @@
                 </button>
               </span>
             </div><br>
-            <h6>head-portrait</h6>
-            <ul>
-              <li>head-portrait</li>
-              <li>head-portrait</li>
+            <ul class="nav-sidebar">
+              <li><a href="">head-portrait</a></li>
+              <li class="active"><a href="">侧边栏</a></li>
+              <li><a href="">面包屑</a></li>
+              <li><a href="">导航栏</a></li>
             </ul>
           </div>
         </div>

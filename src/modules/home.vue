@@ -1,7 +1,11 @@
 <template>
   <div>
-    <div class="introduce-header">
-      <h4>从人民群众中来，到人民群众中去</h4>
+    <div class="swiper-container" id="topSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
     </div>
     <div class="container main-view">
       <div class="row">
@@ -12,7 +16,7 @@
           </h5>
           <div class="row">
             <div class="col-md-2 image-text">
-              <img src="../assets/images/books/es6.jpeg" alt="">
+              <img src="~@/assets/images/books/es6.jpeg" alt="">
               <h6>ES 6标准入门</h6>
             </div>
             <div class="col-md-2 image-text">
@@ -122,6 +126,7 @@ import tabNav from '@/components/common/Tab'
 import alert from '@/components/common/alert'
 import btnGroup from '@/components/common/buttonGroup'
 import store from 'store'
+import Swiper from 'swiper'
 
 export default {
   name: 'home',
@@ -146,7 +151,8 @@ export default {
       man: {
         name: 'lcc'
       },
-      show: true
+      show: true,
+      swiper: null
     }
   },
   components: {
@@ -236,6 +242,15 @@ export default {
         console.log(res.data)
       })
     }
+  },
+  activated () {
+    let that = this
+    this.$nextTick(() => {
+      that.swiper = new Swiper('.swiper-container', {
+        autoplay: true
+      })
+      console.log(that.swiper.init())
+    })
   }
 }
 

@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/modules/Hello'
-import bookDetail from '@/modules/bookDetail'
-import cssGroup from '@/modules/cssGroup'
 import es6 from '@/modules/es6'
 import c1 from '@/modules/es6/c1'
 import c3 from '@/modules/es6/c3'
@@ -22,25 +19,17 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: require('@/modules/home'),
-      meta: {
-        footer: true
-      }
-    },
-    {
-      path: '/hello',
-      name: 'hello',
-      component: Hello
+      component: require('@/modules/home')
     },
     {
       path: '/cssGroup',
       name: 'cssGroup',
-      component: cssGroup
+      component: require('@/modules/cssGroup')
     },
     {
       path: '/bookDetail/:id',
       name: 'bookDetail',
-      component: bookDetail
+      component: require('@/modules/bookDetail')
     },
     {
       path: '/catalogue',
@@ -102,6 +91,17 @@ export default new Router({
       path: '/knowledge',
       name: 'knowledge',
       component: require('@/modules/knowledge/index')
+    }, {
+      path: '/addKnowledge',
+      name: 'addKnowledge',
+      component: require('@/modules/knowledge/add')
+    },
+
+    // 匹配不到的路径定义
+    {
+      path: '*',
+      name: 'hello',
+      component: require('@/modules/hello')
     }
   ]
 })
