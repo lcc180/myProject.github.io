@@ -18,6 +18,7 @@
 		float: right;
 		font-size: 12px;
 		margin-top: 8px;
+		color: $text-muted;
 	}
 }
 
@@ -29,4 +30,10 @@
 
 .title-underline {
 	border-bottom: 1px solid #f0f0f0;
+}
+
+// table的title
+.title-table {
+	text-align: center;
+	margin-bottom: .5rem;
 }

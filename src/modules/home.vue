@@ -2,26 +2,27 @@
   <div>
     <div class="swiper-container" id="topSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide lcc-swiper-slide"><img src="~@/assets/images/timg.jpeg" alt=""></div>
+        <div class="swiper-slide lcc-swiper-slide"><img src="~@/assets/images/timg2.jpeg" alt=""></div>
+        <div class="swiper-slide lcc-swiper-slide"><img src="~@/assets/images/timg3.jpeg" alt=""></div>
       </div>
     </div>
-    <div class="container main-view">
-      <div class="row">
+    <div class="container">
+      <div class="row main-view">
         <div class="col-md-10">
+
           <h5 class="title-tmall">
             最近更新 <small>FASHION & BEAUTY</small>
-            <a class="right" href="">>> 更多</a>
+            <a class="right" href="">更多</a>
           </h5>
           <div class="row">
-            <div class="col-md-2 image-text">
+            <div class="col-md-2 image-text" @click="$router.push('es6')">
               <img src="~@/assets/images/books/es6.jpeg" alt="">
               <h6>ES 6标准入门</h6>
             </div>
             <div class="col-md-2 image-text">
-              <img src="../assets/images/books/javascript.jpg" alt="">
-              <h6>JavaScript高级程序设计（第3版）</h6>
+              <img src="../assets/images/books/javascript.jpg" alt="JavaScript高级程序设计（第3版）">
+              <h6 title="JavaScript高级程序设计（第3版）">JavaScript高级程序设计（第3版）</h6>
             </div>
             <div class="col-md-2 image-text">
               <img src="../assets/images/books/0to1.jpeg" alt="">
@@ -44,79 +45,29 @@
               <h6><router-link :to="{ path: '/node'}">深入浅出nodejs</router-link></h6>
             </div>
           </div>
-        
-          <tab-nav 
-            :tab-list="tabList" 
-            :tab-index.sync="tabIndex" 
-            class="mt-5"
-            style="overflow: hidden;"
-            @:click.native="myclick"
-          >
-            <transition enter-active-class="animated slideInRight">
-              <component :is="tabList[tabIndex].templateName"></component>
-            </transition>
-          </tab-nav>
 
         </div>
+
         <div class="col-md-2">
-          <h5 class="title-border"><i class="iconfont icon-selection"></i>人气排行</h5>
+          <!-- <h5 class="title-border"><i class="iconfont icon-selection"></i>人气排行</h5>
           <div class="image-text" @click="$router.push({
             path: '/bookDetail/1'
           })">
             <img src="../assets/images/books/javascript.jpg" alt="">
             <h6>JavaScript高级程序设计（第3版）</h6>
+          </div> -->
+          <div class="text-muted">
+            <svg-icon icon="icon-edit_light"></svg-icon>
+            我发起的项目
+          </div>
+          <div class="text-muted">
+            <svg-icon icon="icon-edit_light"></svg-icon>
+            我参与的项目
           </div>
         </div>
 
       </div>
     </div>
-
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group row mb-0">
-            <label class="col-sm-2 col-form-label">姓名</label>
-            <div class="col-sm-10">
-              <p class="form-control-static">{{data.name}}</p>
-            </div>
-          </div>
-          <div class="form-group row mb-0">
-            <label class="col-sm-2 col-form-label">手机</label>
-            <div class="col-sm-10">
-              <p class="form-control-static">{{data.mobile}}</p>
-            </div>
-          </div>
-          <div class="form-group row mb-0">
-            <label class="col-sm-2 col-form-label">性别</label>
-            <div class="col-sm-10">
-              <p class="form-control-static">{{data.sex === 'male' ? '男' : '女'}}</p>
-            </div>
-          </div>
-          <div class="form-group row mb-0">
-            <label class="col-sm-2 col-form-label">生日</label>
-            <div class="col-sm-10">
-              <p class="form-control-static">{{data.birth}}</p>
-            </div>
-          </div>
-          <div class="form-group row mb-0">
-            <label class="col-sm-2 col-form-label">余额</label>
-            <div class="col-sm-10">
-              <p class="form-control-static">{{$store.getters.balance}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="lcctest">
-            
-          </div>
-          <div class="layout layout-5">
-            <div class="layout-item" v-for="image in imageList" v-show="image.src">
-              <img :src="image.src" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
   </div>
 </template>
@@ -127,6 +78,7 @@ import alert from '@/components/common/alert'
 import btnGroup from '@/components/common/buttonGroup'
 import store from 'store'
 import Swiper from 'swiper'
+import countdown from '@/components/countdown'
 
 export default {
   name: 'home',
@@ -158,21 +110,11 @@ export default {
   components: {
     tabNav: tabNav,
     alert: alert,
-    btnGroup: btnGroup
+    btnGroup: btnGroup,
+    countdown
   },
-  computed: {
-    data () {
-      return this.$store.state.userInfo
-    }
-  },
+  computed: {},
   created () {
-    this.$store.commit('updateUserInfo', {
-      name: '李靜蔓',
-      mobile: '15944528112',
-      sex: 'femail',
-      birth: '1993-08-14',
-      balance: 10
-    })
     // this.getImage()
     console.log(store, $)
     // this.getUserList()
@@ -247,10 +189,20 @@ export default {
     let that = this
     this.$nextTick(() => {
       that.swiper = new Swiper('.swiper-container', {
-        autoplay: true
+        autoplay: {
+          delay: 5000
+        }
       })
       console.log(that.swiper.init())
     })
+    setTimeout(function () {
+      that.countdownTime = 10000
+    }, 0)
+    setTimeout(function () {
+      that.countdownTime = 20000
+    }, 5000)
+
+    console.log(this.$store.state.userInfo)
   }
 }
 

@@ -9,6 +9,7 @@ import $ from 'jquery'
 
 // 引入sass样式文件
 import '@/assets/scss/bootstrap.scss'
+import '@/assets/js/iconfont.js'
 
 // 注册全局component
 import '@/components'
@@ -34,7 +35,5 @@ new Vue({
   template: '<App/>',
   components: { App },
   store: vueStore,
-  methods: {},
-  created () {
-  }
+  methods: {}
 })

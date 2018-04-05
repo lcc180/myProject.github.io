@@ -1,11 +1,12 @@
 <template>
   <div class="container my-5">
   	<div class="row">
-  		<div class="col-md-8">
+      <div class="col-md-12">
+        <date-picker v-model="date" :first-day-of-week="1" not-before="2017-07-01" width="236"></date-picker>
+        <div class="btn btn-primary float-right" @click="showBM">新增笔记</div>
+      </div>
 
-        <div class="mb-4">
-          <date-picker v-model="date" :first-day-of-week="1" not-before="2017-07-01" width="236"></date-picker>
-        </div>
+  		<div class="col-md-8 my-5">
 
         <div class="knowledge-container" v-for="item in knowldegeList">
           <h5 @click="removeKnowledges(item._id)">{{item.name}}</h5>
@@ -56,6 +57,21 @@
         </div> -->
   		</div>
   	</div>
+
+    <!-- 笔记 -->
+    <bootstrap-modal name="新增笔记" ref="addnote" :saveModel="addnote">
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">标题</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">内容/心得</label>
+          <textarea class="form-control" id="formGroupExampleInput2" autocomplete="off"></textarea>
+        </div>
+      </form>
+    </bootstrap-modal>
+
   </div>
 </template>
 
@@ -81,6 +97,12 @@ export default {
       }).then(res => {
         this.getKnowledgeList()
       })
+    },
+    addnote () {
+      console.log(1)
+    },
+    showBM () {
+      this.$refs.addnote.showModal()
     }
   },
   activated () {

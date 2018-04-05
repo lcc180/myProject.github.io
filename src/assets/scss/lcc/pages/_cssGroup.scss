@@ -1,0 +1,43 @@
+// cssGroup
+//
+
+.css-group {
+	// background: #edece9;
+	padding: 2rem 0;
+}
+
+.css-show-fluid {
+	.title {
+		@extend .container;
+		font-size: .9375rem;
+		margin-bottom: 1rem;
+	}
+	pre {
+		@extend .container;
+		margin: {
+			top: 1rem;
+		}
+	}
+}
+
+.row-separation {
+	@extend .row;
+	margin-bottom: 2rem;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	padding: {
+		top: 1rem;
+		bottom: 1rem;
+	}
+
+	.row-separation-item {
+		border-right: 1px solid #f0f0f0;
+
+		a {
+			margin-right: 1rem;
+		}
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+}

@@ -3,8 +3,10 @@
 	background: #fff;
 	font-size: .875rem;
 	box-shadow: 0 0 4px rgba(0,0,0,.2);
-	position: relative;
-	z-index: 1;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
 	
 	// color: $header-top-color;
 

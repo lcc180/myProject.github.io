@@ -23,8 +23,11 @@ export default new Router({
     },
     {
       path: '/cssGroup',
-      name: 'cssGroup',
-      component: require('@/modules/cssGroup')
+      component: require('@/modules/cssGroup/index'),
+      children: [{
+        path: '',
+        component: require('@/modules/cssGroup/navbar')
+      }]
     },
     {
       path: '/bookDetail/:id',
@@ -60,6 +63,18 @@ export default new Router({
         {
           path: 'c6',
           component: c6
+        },
+        {
+          path: 'c8',
+          component: require('@/modules/es6/c8')
+        },
+        {
+          path: 'c9',
+          component: require('@/modules/es6/c9')
+        },
+        {
+          path: 'c16',
+          component: require('@/modules/es6/c16')
         }
       ]
     },
@@ -83,6 +98,16 @@ export default new Router({
         {
           path: 'c7',
           component: nodeC7
+        },
+        {
+          path: 'c2',
+          name: 'c2',
+          component: require('@/modules/node/c2')
+        },
+        {
+          path: 'c3',
+          name: 'c3',
+          component: require('@/modules/node/c3')
         }
       ]
     },
@@ -95,6 +120,10 @@ export default new Router({
       path: '/addKnowledge',
       name: 'addKnowledge',
       component: require('@/modules/knowledge/add')
+    }, {
+      path: '/cropImage',
+      name: 'cropImage',
+      component: require('@/modules/cropImage')
     },
 
     // 匹配不到的路径定义

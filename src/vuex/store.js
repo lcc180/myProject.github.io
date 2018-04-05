@@ -1,37 +1,20 @@
 // vuex
 import Vue from 'vue'
 import Vuex from 'vuex'
+import mutations from '@/vuex/mutations'
+import getters from '@/vuex/getters'
+import actions from '@/vuex/actions'
+import store2 from 'store'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    userInfo: {
-      name: '刘灿城',
-      mobile: '13622335236',
-      sex: 'male',
-      birth: '1990-08-06',
-      balance: 267488.97
-    }
+    userInfo: store2.get('userInfo')
   },
-  mutations: {
-    updateUserInfo (state, info) {
-      state.userInfo = info
-    },
-    updateUserInfoSingle (state, key, value) {
-      state.userInfo[key] = value
-    }
-  },
-  actions: {
-    updateUserInfo ({ commit, state }, info) {
-      commit('updateUserInfo', info)
-    }
-  },
-  getters: {
-    balance: state => {
-      return '$' + Math.floor(state.userInfo.balance)
-    }
-  }
+  mutations,
+  actions,
+  getters
 })
 
 export default store

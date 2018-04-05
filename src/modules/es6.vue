@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #CCE8CF;">
+  <div>
      <div class="introduce-header">
       <!-- <h4></h4> -->
       <div class="head-portrait animated jello">
@@ -23,15 +23,15 @@
             <router-link class="nav-list-item" :to="{ path: '/es6/c5'}" active-class="active">章节5. 正则的扩展</router-link>
             <router-link class="nav-list-item" :to="{ path: '/es6/c6'}" active-class="active">章节6. 数值的扩展</router-link>
             <router-link class="nav-list-item" to="">章节7. 数组的扩展</router-link>
-            <router-link class="nav-list-item" to="">章节8. 函数的扩展</router-link>
-            <router-link class="nav-list-item" to="">章节9. 对象的扩展</router-link>
+            <router-link class="nav-list-item" :to="{ path: '/es6/c8'}" active-class="active">章节8. 函数的扩展</router-link>
+            <router-link class="nav-list-item" :to="{ path: '/es6/c9'}" active-class="active">章节9. 对象的扩展</router-link>
             <router-link class="nav-list-item" to="">章节10. Symbol</router-link>
-            <router-link class="nav-list-item" to="">Proxy和Reflect</router-link>
-            <router-link class="nav-list-item" to="">二进制数组</router-link>
-            <router-link class="nav-list-item" to="">Set和Map数据结构</router-link>
-            <router-link class="nav-list-item" to="">Iterator和for...of循环</router-link>
-            <router-link class="nav-list-item" to="">Generator函数</router-link>
-            <router-link class="nav-list-item" to="">Promise对象</router-link>
+            <router-link class="nav-list-item" to="">章节11. Symbol</router-link>
+            <router-link class="nav-list-item" to="">章节12. Symbol</router-link>
+            <router-link class="nav-list-item" to="">章节13. Symbol</router-link>
+            <router-link class="nav-list-item" to="">章节14. Symbol</router-link>
+            <router-link class="nav-list-item" to="">章节15. Symbol</router-link>
+            <router-link class="nav-list-item" :to="{ path: '/es6/c16'}" active-class="active">章节16. Promise对象</router-link>
             <router-link class="nav-list-item" to="">异步操作和async函数</router-link>
             <router-link class="nav-list-item" to="">Class</router-link>
             <router-link class="nav-list-item" to="">修饰器</router-link>

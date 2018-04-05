@@ -7,10 +7,12 @@
 
 .head-nav-item {
 	color: lighten($gray-dark, 40%);
-	padding: 1rem 0;
+	padding: .5rem 0;
+	height: 3.5rem;
+	line-height: 2.5rem;
 	margin: {
-		left: 1.5rem;
-		right: 1.5rem;
+		left: 1.25rem;
+		right: 1.25rem;
 	}
 	display: inline-block;
 	font-size: .875rem;
@@ -28,12 +30,60 @@
 	}
 
 	&.logo {
+		margin-right: 0;
 		img {
-			height: 1.5rem;
+			height: 2.5rem;
 		}
 	}
 
 	&.right {
 		// float: right;
 	}
+
+	&.head-nav-item-portrait {
+		float: right;
+		position: relative;
+
+		img {
+			height: 2rem;
+			border-radius: 3px;
+		}
+	}
+}
+
+.nav-zhihu {
+	@include list-unstyled();
+	
+	display: none;
+	border: 1px solid $border-color;
+	position: absolute;
+	left: -2.5rem;
+	top: 3.9375rem;
+	width: 7rem;
+	background: #fff;
+	padding: .5rem 0;
+	box-shadow: 0 5px 20px rgba(26,26,26,.1);
+
+	.nav-zhihu-item {
+		line-height: 2rem;
+		padding: 0 1rem;
+		color: lighten($gray-dark, 40%);
+
+		.icon {
+			margin-top: -2px;
+		}
+	}
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-width: .5rem;
+	border-style: solid;
+	border-color: transparent transparent #eee transparent;
+	position: absolute;
+	margin: auto;
+	top: -1rem;
+	left: 0;
+	right: 0;
 }

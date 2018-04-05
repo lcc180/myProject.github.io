@@ -1,0 +1,61 @@
+//
+// Navbar
+// Navbar classic
+
+.navbar-classic-container {
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+
+// Nav classic
+//
+// copy from zhihu
+
+.navbar-classic {
+	@extend .container;
+
+	display: flex;
+	justify-content: space-between;
+	padding: {
+		top: $navbar-classic-y;
+		bottom: $navbar-classic-y;
+	};
+}
+
+.navbar-classic-item {
+	@include list-unstyled();
+	display: flex;
+	margin: 0;
+
+	.navbar-classic-item-li {
+		height: $navbar-classic-height;
+
+		&.logo {
+			img {
+				max-height: 100%;
+			}
+		}
+
+		> a {
+			color: #8590a6;
+			line-height: $navbar-classic-height;
+			padding: 0 1rem;
+			font-size: $navbar-classic-size;
+
+			&.active {
+				color: $gray-dark;
+			}
+		}
+
+		.form-control, .btn {
+			padding: {
+				top: $navbar-classic-form-padding;
+				bottom: $navbar-classic-form-padding;
+			}
+		}
+
+		&.search {
+			padding: 0 1rem;
+		}
+	}
+}

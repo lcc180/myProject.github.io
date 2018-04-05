@@ -1,3 +1,18 @@
+<!-- 
+  使用方法:
+  <tab-nav 
+    :tab-list="tabList" 
+    :tab-index.sync="tabIndex" 
+    class="mt-5"
+    style="overflow: hidden;"
+    @:click.native="myclick"
+  >
+    <transition enter-active-class="animated slideInRight">
+      <component :is="tabList[tabIndex].templateName"></component>
+    </transition>
+  </tab-nav>
+ -->
+
 <template>
   <div>
     <ul class="nav nav-tabs mb-4">

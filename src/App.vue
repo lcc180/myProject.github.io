@@ -6,7 +6,7 @@
           <div class="col-md-12">
             <ul class="head-nav">
               <li class="head-nav-item logo">
-                <img src="http://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="">
+                <img src="~@/assets/images/huaban/logo.png" alt="">
               </li>
               <router-link class="head-nav-item pl-0" to="/home" active-class="active">
                 JC书城
@@ -18,20 +18,22 @@
                 学习笔记
               </router-link>
               <a href="" class="head-nav-item">精选</a>
-              <a href="" class="head-nav-item">分类</a>
-              <a href="" class="head-nav-item">
-                分类
-              </a>
-
-              <li class="head-nav-item right">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">
-                      <i class="iconfont icon-search"></i>
-                    </button>
-                  </span>
-                </div>
+              <li class="head-nav-item head-nav-item-portrait">
+                <img :src="userInfo.portrait" id="header-portrait" alt="" @click="toggleNav">
+                <ul class="nav-zhihu">
+                  <li class="nav-zhihu-item">
+                    <a class="text-muted" href="">
+                      <svg-icon icon="icon-favorfill"></svg-icon>我的主页
+                    </a>
+                  </li>
+                  <li class="nav-zhihu-item">
+                    <a class="text-muted" href=""><svg-icon icon="icon-shezhi"></svg-icon>设置</a>
+                  </li>
+                  <li class="nav-zhihu-item">
+                    <a class="text-muted" href=""><svg-icon icon="icon-camerafill"></svg-icon>退出</a>
+                  </li>
+                  <li class="triangle"></li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -85,9 +87,11 @@
     </div> -->
     
     <!--  -->
-    <keep-alive exclude="">
-      <router-view></router-view>
-    </keep-alive>
+    <div class="main-container">
+      <keep-alive exclude="">
+        <router-view></router-view>
+      </keep-alive>
+    </div>
     
     <footer class="copyright" v-show="!$route.meta.hideFooter">
       © 2017 GitHub, Inc.
@@ -96,8 +100,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'app'
+  name: 'app',
+  computed: {
+    ...mapGetters(['userInfo'])
+  },
+  methods: {
+    toggleNav () {
+      $('.nav-zhihu').fadeToggle()
+    }
+  },
+  created () {
+    $(document).on('click', event => {
+      event.preventDefault()
+      /* Act on the event */
+      if (event.target.id === 'header-portrait') return
+      if (!$(event.target).closest('.nav-zhihu').length) {
+        $('.nav-zhihu').fadeOut()
+      }
+    })
+  }
 }
 </script>
 
