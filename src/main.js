@@ -20,6 +20,7 @@ import '@/filter'
 // 第三方插件
 /* exported Velocity */
 import 'velocity-animate'
+import '@/assets/js/plugins'
 
 Vue.config.productionTip = false
 
@@ -35,5 +36,8 @@ new Vue({
   template: '<App/>',
   components: { App },
   store: vueStore,
-  methods: {}
+  methods: {},
+  activated () {
+    console.log($)
+  }
 })

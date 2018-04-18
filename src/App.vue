@@ -19,7 +19,7 @@
               </router-link>
               <a href="" class="head-nav-item">精选</a>
               <li class="head-nav-item head-nav-item-portrait">
-                <img :src="userInfo.portrait" id="header-portrait" alt="" @click="toggleNav">
+                <img :src="userInfo ? userInfo.portrait : ''" id="header-portrait" alt="" @click="toggleNav">
                 <ul class="nav-zhihu">
                   <li class="nav-zhihu-item">
                     <a class="text-muted" href="">
