@@ -47,16 +47,28 @@
     <p>
       可以看到，ES6的写法比ES5简洁许多，而且非常自然。下面是另一个例子。
     </p>
+    
+    <hr>
 
-    <h2>5.2 字符串的正则方法</h2>
-    <p>字符串对象共有4个方法，可以使用正则表达式：match()、replace()、search()和split()。</p>
-    <p>ES6将这4个方法，在语言内部全部调用RegExp的实例方法，从而做到所有与正则相关的方法，全都定义在RegExp对象上。</p>
-    <ul>
-      <li>String.prototype.match 调用 RegExp.prototype[Symbol.match]</li>
-      <li>String.prototype.replace 调用 RegExp.prototype[Symbol.replace]</li>
-      <li>String.prototype.search 调用 RegExp.prototype[Symbol.search]</li>
-      <li>String.prototype.split 调用 RegExp.prototype[Symbol.split]</li>
-    </ul>
+    <h4>8.2 rest参数</h4>
+    <p>
+      ES6引入了rest参数（形式为“...变量名“），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest参数搭配的变量是一个数组，该变量将多余的参数放入其中。
+    </p>
+    <pre>
+      <code>
+        function add (...values) {
+          let sum = 0
+
+          for (let val of values) {
+            sum += val
+          }
+
+          return sum
+        }
+
+        add(2, 5, 3) // 10
+      </code>
+    </pre>
 
     <hr>
 

@@ -58,30 +58,35 @@
       对于嵌套的对象，Object.assign的处理方法是替换，而不是添加。
     </p>
 
-    <h2>5.2 字符串的正则方法</h2>
-    <p>字符串对象共有4个方法，可以使用正则表达式：match()、replace()、search()和split()。</p>
-    <p>ES6将这4个方法，在语言内部全部调用RegExp的实例方法，从而做到所有与正则相关的方法，全都定义在RegExp对象上。</p>
-    <ul>
-      <li>String.prototype.match 调用 RegExp.prototype[Symbol.match]</li>
-      <li>String.prototype.replace 调用 RegExp.prototype[Symbol.replace]</li>
-      <li>String.prototype.search 调用 RegExp.prototype[Symbol.search]</li>
-      <li>String.prototype.split 调用 RegExp.prototype[Symbol.split]</li>
-    </ul>
-
     <hr>
 
-    <h2>5.3 u修饰符</h2>
-    <p>ES6对正则表达式添加了u修饰符，含义为“Unicode模式”，用来正确处理大于\uFFFF的Unicode字符。也就是说，会正确处理四个字节的UTF-16编码。</p>
+    <h4>9.6 属性的可枚举性</h4>
+    <p>
+      对象的每个属性都有一个描述对象（Descriptor），用于控制该属性的行为。Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
+    </p>
     <pre>
       <code>
-        /^\uD83D/u.test('\uD83D\uDC2A')
-        // false
-        /^\uD83D/.test('\uD83D\uDC2A')
-        // true
+        let obj = { foo: 123 }
+        Object.getOwnPropertyDescriptor方法可以获取该属性
+        // {
+        //  value: 123,
+        //  writable: true,
+        //  enumerable: true,
+        //  configurable: true
+        // }
       </code>
     </pre>
-    <p>上面代码中，\uD83D\uDC2A是一个四个字节的UTF-16编码，代表一个字符。但是，ES5不支持四个字节的UTF-16编码，会将其识别为两个字符，导致第二行代码结果为true。加了u修饰符以后，ES6就会识别其为一个字符，所以第一行代码结果为false。</p>
-    <p>一旦加上u修饰符号，就会修改下面这些正则表达式的行为。</p>
+    <p>
+      描述对象的enumerable属性称为“可枚举性”，如果该属性为false，就表示某些操作慧忽略当前属性。
+    </p>
+    <p>
+      ES5有3个操作慧忽略enumerable为false的属性。
+    </p>
+    <ul>
+      <li>for...in循环：只遍历对象自身的和继承的可枚举属性。</li>
+      <li>Object.keys()：返回对象自身的所有可枚举属性的键名。</li>
+      <li>JSON.stringify()：只串行化对象自身的可枚举性。</li>
+    </ul>
   </div>
 </template>
 
@@ -101,6 +106,12 @@ export default {
       } else {
         return num + this.recursion(num - 1)
       }
+    },
+    ccTest (...ab) {
+      console.log()
+    },
+    makeCar ({ brand = '起亚', type = 'K5' }) {
+      console.log(brand, type)
     }
   },
   created () {
@@ -109,7 +120,10 @@ export default {
     let arr3 = [3]
     let arr4 = [...arr1, ...arr2, ...arr3]
     console.log(arr4)
-    let cc = {}
+    let cc = {
+      a: 1,
+      b: 2
+    }
 
     let nodelist = document.querySelectorAll('p')
     console.log([...nodelist])
@@ -117,7 +131,8 @@ export default {
     let map1 = new Map([[1, 'one'], [2, 'two'], [3, 'three']])
     console.log([...map1.keys()])
     console.log(this.recursion(3))
-    console.log(cc.constructor)
+    this.ccTest(...Object.keys(cc))
+    this.makeCar({ type: 'K7' })
   }
 }
 </script>
